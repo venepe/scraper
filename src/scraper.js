@@ -8,7 +8,7 @@ export const scrape = async (url, site) => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
 
-  await page.goto(url, { waitUntil: "networkidle" });
+  await page.goto(url, { waitUntil: "networkidle2", timeout: 60000 });
 
   let data;
   if (!site) {
